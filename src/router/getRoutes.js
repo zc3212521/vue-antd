@@ -186,6 +186,15 @@ const originChildren = [
           icon: ''
         },
         component: () => import(/* webpackChunkName: "richEditor" */ '@/views/home/test/richEditor')
+      },
+      {
+        path: 'baiduMap',
+        name: 'baiduMap',
+        meta: {
+          title: '百度地图',
+          icon: ''
+        },
+        component: () => import(/* webpackChunkName: "baiduMap" */ '@/views/home/test/baiduMap')
       }
     ]
   }

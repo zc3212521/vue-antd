@@ -44,6 +44,12 @@ module.exports = {
     }
   },
   configureWebpack: config => {
+    const commomCfg = {
+      externals: {
+        'BMap': 'BMap',
+        'BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW': 'BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW'
+      }
+    }
     if (isPro) {
       return {
         plugins: [
@@ -59,8 +65,11 @@ module.exports = {
             // 最小压缩比达到 0.8 时才会被压缩
             minRatio: 0.8
           })
-        ]
+        ],
+        ...commomCfg
       }
+    } else {
+      return commomCfg
     }
   }
 }
